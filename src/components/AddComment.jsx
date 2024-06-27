@@ -31,10 +31,10 @@ class AddComment extends Component {
     })
       .then(resp => {
         if (resp.ok) {
-          alert(resp.message);
+          
           this.setState({
             comment: {
-              author: "",
+            
               comment: "",
               createdAt: "",
               elementId: this.props.idBook,
@@ -44,6 +44,7 @@ class AddComment extends Component {
               _id: "",
             },
           });
+          alert("Commento aggiunto con successo!");
         } else {
           throw new Error("Error fetching data");
         }
@@ -55,16 +56,7 @@ class AddComment extends Component {
     return (
       <Form className="text-start" onSubmit={this.addComment}>
         <h2> Add commento </h2>
-        <Form.Group className="mb-3" controlId="formName">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Inserisci la tua email"
-            value={this.state.comment.email}
-            onChange={e => this.setState({ comment: { ...this.state.comment, email: e.target.value } })} // scrittura dello stato
-            required
-          />
-        </Form.Group>
+        
         <Form.Group className="mb-3" controlId="formName">
           <Form.Label>Comment</Form.Label>
           <Form.Control
