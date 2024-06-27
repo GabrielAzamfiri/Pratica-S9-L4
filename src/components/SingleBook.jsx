@@ -11,7 +11,7 @@ class SingleBook extends Component {
   };
   render() {
     return (
-      <Col sm={4} md={3} lg={2} key={`book-${this.props.book.asin}`}>
+      <Col sm={4}   key={`book-${this.props.book.asin}`}>
         <Card onClick={this.selezionato} className={this.state.selected ? "border border-info bg-black" : "border-none"}>
           <Card.Img variant="top" src={this.props.book.img}  />
           <Card.Body>
@@ -20,6 +20,7 @@ class SingleBook extends Component {
             <Button variant="primary">Take a look</Button>
           </Card.Body>
         </Card>
+        
         {this.state.selected && <CommentArea idBook={this.props.book.asin}/>}
       </Col>
     );

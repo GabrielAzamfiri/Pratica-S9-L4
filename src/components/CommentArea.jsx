@@ -1,7 +1,7 @@
 import { Component } from "react";
 import CommentsList from "./CommentsList";
 import AddComment from "./AddComment";
-import { Button, Modal } from "react-bootstrap";
+
 
 class CommentArea extends Component {
   state = {
@@ -38,7 +38,9 @@ class CommentArea extends Component {
   render() {
     return (
       <div>
+        <h2> Commenti </h2>
         <CommentsList comments={this.state.comments} />
+        <AddComment idBook={this.props.idBook}/>
       </div>
 
       //   <CommentsList comments={this.state.comments}/>

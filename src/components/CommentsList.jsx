@@ -1,4 +1,5 @@
 import { Component } from "react";
+import SingleComment from "./SingleComment";
 
 
 class CommentsList extends Component {
@@ -19,11 +20,7 @@ class CommentsList extends Component {
         return (
             <div>
                 {this.props.comments.map((comment, index) => (
-                    <div key={index}>
-                        <p><strong>Author:</strong> {comment.author}</p>
-                        <p><strong>Comment:</strong> {comment.comment}</p>
-                        <p><strong>Rate:</strong> {comment.rate}</p>
-                    </div>
+                    <SingleComment comment={comment}/>
                 ))}
             </div>
             
